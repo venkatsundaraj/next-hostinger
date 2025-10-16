@@ -4,7 +4,7 @@ const products: { productName: string; status: string }[] = [
   { productName: "pen", status: "true" },
 ];
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     products.push(body);
@@ -13,8 +13,4 @@ export async function POST(req: NextRequest, res: NextResponse) {
   } catch (err) {
     console.log(err);
   }
-}
-
-export async function GET() {
-  return NextResponse.json("hello world");
 }
