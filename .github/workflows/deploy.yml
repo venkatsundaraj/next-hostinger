@@ -49,8 +49,8 @@ jobs:
             cd /next-hostinger
             git pull origin main
             pnpm install
-            npx next build
+            pnpm run build
             pm2 stop nextjs-app || true
             pm2 delete nextjs-app || true
-            pm2 start npm --name "nextjs-app" -- start --prefix /next-hostinger
+            pm2 start pnpm --cwd /next-hostinger --name "nextjs-app" -- start
             pm2 save
