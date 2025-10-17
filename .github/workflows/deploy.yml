@@ -50,6 +50,7 @@ jobs:
             git pull origin main
             pnpm install
             pnpm run build
+            pm2 stop nextjs-app || true
             pm2 delete nextjs-app || true
             pm2 start pnpm --name "nextjs-app" -- start
             pm2 save
