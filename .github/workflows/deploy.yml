@@ -46,4 +46,10 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           port: 22
           script: |
-            cd /next-hostinger && git pull origin main && pnpm install && pnpm run build && pm2 restart nextjs-app || pm2 start pnpm --name "nextjs-app" -- start
+            cd /next-hostinger
+            git pull origin main
+            pnpm install
+            pnpm run build
+            pm2 delete nextjs-app || true
+            pm2 start pnpm --name "nextjs-app" -- start
+            pm2 save
