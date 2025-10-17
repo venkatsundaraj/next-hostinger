@@ -14,7 +14,7 @@ export default function Home() {
       productName: inputRef.current?.value || "",
       status: selectValue || "pickup",
     };
-    const res = await fetch("http://localhost:3000/api/product", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/product`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
@@ -49,7 +49,7 @@ export default function Home() {
           {/* <option value={"status"}>status</option> */}
         </select>
         <button type="submit" className="bg-black">
-          submit
+          submit the form
         </button>
       </form>
       <ul className="flex flex-col">
