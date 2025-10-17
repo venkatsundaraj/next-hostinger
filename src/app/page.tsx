@@ -49,7 +49,7 @@ export default function Home() {
           {/* <option value={"status"}>status</option> */}
         </select>
         <button type="submit" className="bg-black">
-          submit the form
+          submit the form 'basic one'
         </button>
       </form>
       <ul className="flex flex-col">
