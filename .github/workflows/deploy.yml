@@ -46,7 +46,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           port: 22
           script: |
-            cd /next-hostinger
+            cd /home/ubuntu/next-hostinger
             git pull origin main
             pnpm install
             pnpm run build
