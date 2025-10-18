@@ -27,7 +27,7 @@ export default function Home() {
     setSelectValue(e.target.value);
   };
   return (
-    <main className="w-screen h-screen bg-white flex items-center justify-center">
+    <main className="w-screen h-screen bg-white flex flex-col items-center justify-center">
       <form
         onSubmit={submitHandler}
         className="flex flex-col items-start gap-8"
