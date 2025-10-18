@@ -52,6 +52,7 @@ export default function Home() {
           submit the value
         </button>
       </form>
+      <h4>the list of items from query client</h4>
       <ul className="flex flex-col">
         {products?.map((item, i) => (
           <li className="text-black">
