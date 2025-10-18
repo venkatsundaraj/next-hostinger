@@ -45,9 +45,16 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           port: 22
+          env:
+            NEXT_PUBLIC_URL: ${{ secrets.NEXT_PUBLIC_URL }}
           script: |
             cd /home/ubuntu/next-hostinger
             git pull origin main
+
+            cat > .env << EOF
+            NEXT_PUBLIC_URL=$NEXT_PUBLIC_URL
+            EOF
+
             pnpm install
             pnpm run build
             pm2 delete nextjs-app || true
